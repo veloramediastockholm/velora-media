@@ -37,31 +37,31 @@ export default function PizzeriaRomaPage() {
         </nav>
 
         <div className="relative z-10 flex min-h-[82svh] items-center">
-          <div className="max-w-3xl">
+          <div className="w-full max-w-full md:max-w-3xl">
             <p className="mb-5 text-sm uppercase tracking-[0.45em] text-orange-300">
               Pizzeria Roma
             </p>
 
-            <h1 className="font-[family-name:var(--font-playfair)] text-[4.4rem] leading-[0.92] md:text-8xl">
+            <h1 className="font-[family-name:var(--font-playfair)] max-w-full text-[3rem] leading-[0.95] md:text-8xl">
               Stenugnsbakad pizza med italiensk själ.
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-200">
+            <p className="mt-6 max-w-full text-lg leading-relaxed text-zinc-200 md:max-w-xl">
               En modern italiensk pizzeria med premium råvaror, varm atmosfär
               och pizzor inspirerade av klassiska restauranger i Rom.
             </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex w-full flex-col gap-4">
               <a
                 href="#meny"
-                className="rounded-full bg-white px-8 py-4 text-center font-bold text-black"
+                className="w-full rounded-full bg-white px-8 py-4 text-center font-bold text-black"
               >
                 Se meny
               </a>
 
               <a
                 href="#kontakt"
-                className="rounded-full border border-white/30 px-8 py-4 text-center text-white"
+                className="w-full rounded-full border border-white/30 px-8 py-4 text-center text-white"
               >
                 Beställ online
               </a>
