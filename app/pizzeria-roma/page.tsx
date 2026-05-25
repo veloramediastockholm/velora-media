@@ -12,7 +12,7 @@ const pizzas = [
 export default function PizzeriaRomaPage() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <section className="relative min-h-screen overflow-hidden px-6 py-10">
+      <section className="relative min-h-[100svh] overflow-hidden px-6 py-10 pb-28">
         <Image
           src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=2400&q=90&auto=format&fit=crop"
           alt="Pizzeria Roma"
@@ -36,22 +36,22 @@ export default function PizzeriaRomaPage() {
           </div>
         </nav>
 
-        <div className="relative z-10 flex min-h-[80vh] items-center">
+        <div className="relative z-10 flex min-h-[82svh] items-center">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm uppercase tracking-[0.45em] text-orange-300">
               Pizzeria Roma
             </p>
 
-            <h1 className="font-[family-name:var(--font-playfair)] text-6xl leading-none md:text-8xl">
+            <h1 className="font-[family-name:var(--font-playfair)] text-[4.4rem] leading-[0.92] md:text-8xl">
               Stenugnsbakad pizza med italiensk själ.
             </h1>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-200">
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-zinc-200">
               En modern italiensk pizzeria med premium råvaror, varm atmosfär
               och pizzor inspirerade av klassiska restauranger i Rom.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#meny"
                 className="rounded-full bg-white px-8 py-4 text-center font-bold text-black"
@@ -81,8 +81,6 @@ export default function PizzeriaRomaPage() {
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-black/45" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/40" />
-        <div className="absolute left-0 bottom-0 h-[360px] w-[420px] rounded-full bg-orange-600/20 blur-[120px]" />
-        <div className="absolute right-0 top-0 h-[420px] w-[420px] rounded-full bg-amber-500/15 blur-[130px]" />
 
         <div className="relative z-10 mx-auto max-w-5xl">
           <p className="mb-4 text-sm uppercase tracking-[0.35em] text-orange-300">
@@ -103,7 +101,7 @@ export default function PizzeriaRomaPage() {
             {pizzas.map(([name, detail, price]) => (
               <div
                 key={name}
-                className="flex items-start justify-between gap-6 rounded-3xl border border-white/15 bg-black/70 p-6 shadow-[0_20px_70px_-35px_rgba(0,0,0,1)] backdrop-blur-md transition hover:border-orange-300/40 hover:bg-black/80"
+                className="flex items-start justify-between gap-6 rounded-3xl border border-white/15 bg-black/70 p-6 backdrop-blur-md transition hover:border-orange-300/40 hover:bg-black/80"
               >
                 <div>
                   <h3 className="font-[family-name:var(--font-playfair)] text-2xl font-bold">
