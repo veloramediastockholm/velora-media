@@ -262,11 +262,11 @@ export default function CinematicShowcase() {
             Showcases
           </p>
 
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl font-normal leading-tight tracking-[-0.03em] text-white md:text-6xl">
-            Digitala upplevelser som får
-            <br className="hidden md:block" />
-            restauranger att växa.
-          </h2>
+          <h2 className="font-[family-name:var(--font-playfair)] text-4xl font-normal leading-tight tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
+  Digitala upplevelser som får
+  <br className="hidden md:block" />
+  {" "}restauranger att växa.
+</h2>
 
           <p className="mx-auto mt-5 max-w-xl text-sm text-zinc-400 md:text-base">
             Vi skapar moderna hemsidor, menyer och digitala upplevelser som
