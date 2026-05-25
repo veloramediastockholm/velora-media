@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const NAV_LINKS = ["Meny", "Om oss", "Beställ"] as const;
 
@@ -17,6 +18,7 @@ type ShowcaseRestaurant = {
   borderHover: string;
   phoneGlow: string;
   menuLabel: string;
+  href: string;
   menuItems: MenuItem[];
 };
 
@@ -26,6 +28,7 @@ const restaurants: ShowcaseRestaurant[] = [
     name: "Pizzeria Roma",
     brandTop: "Pizzeria",
     nameDisplay: "Roma",
+    href: "/pizzeria-roma",
     description:
       "Modern italiensk pizzeria med stenugnsbakade pizzor, premium råvaror och en varm atmosfär inspirerad av klassiska restauranger i Rom.",
     bgImage:
@@ -47,6 +50,7 @@ const restaurants: ShowcaseRestaurant[] = [
     name: "Sushi Kyoto",
     brandTop: "Sushi",
     nameDisplay: "Kyoto",
+    href: "/sushi-kyoto",
     description:
       "Elegant sushirestaurang med modern japansk design, noggrant utvalda råvaror och en exklusiv omakase-upplevelse.",
     bgImage:
@@ -68,6 +72,7 @@ const restaurants: ShowcaseRestaurant[] = [
     name: "Thai Garden",
     brandTop: "Thai",
     nameDisplay: "Garden",
+    href: "/thai-garden",
     description:
       "Modern thairestaurang med autentiska smaker, färska råvaror och en varm tropisk atmosfär inspirerad av Bangkok.",
     bgImage:
@@ -89,6 +94,7 @@ const restaurants: ShowcaseRestaurant[] = [
     name: "Hörnan Café",
     brandTop: "Hörnan",
     nameDisplay: "Café",
+    href: "/hornan-cafe",
     description:
       "Modernt skandinaviskt café med specialty coffee, nybakade bakverk och en varm nordisk atmosfär.",
     bgImage:
@@ -193,27 +199,22 @@ function CardNav() {
 function GoldButton() {
   return (
     <>
-      <button
-        type="button"
-        className="hidden rounded-full border border-amber-400/50 bg-black/25 px-6 py-3 text-xs font-medium tracking-wide text-amber-50 backdrop-blur-xl transition-all duration-500 hover:border-amber-300 hover:bg-amber-400/12 hover:scale-[1.03] md:inline-flex"
-      >
+      <span className="hidden rounded-full border border-amber-400/50 bg-black/25 px-6 py-3 text-xs font-medium tracking-wide text-amber-50 backdrop-blur-xl transition-all duration-500 group-hover:border-amber-300 group-hover:bg-amber-400/12 group-hover:scale-[1.03] md:inline-flex">
         Beställ online
-      </button>
+      </span>
 
-      <button
-        type="button"
-        className="inline-flex items-center gap-4 border-b border-amber-400 pb-2 text-lg font-medium text-amber-300 md:hidden"
-      >
+      <span className="inline-flex items-center gap-4 border-b border-amber-400 pb-2 text-lg font-medium text-amber-300 md:hidden">
         Visa showcase <span className="text-2xl">→</span>
-      </button>
+      </span>
     </>
   );
 }
 
 function ShowcaseCard({ restaurant }: { restaurant: ShowcaseRestaurant }) {
   return (
-    <article
-      className={`group relative min-h-[430px] overflow-hidden rounded-[1.6rem] border border-white/[0.09] bg-zinc-950 shadow-[0_45px_110px_-50px_rgba(0,0,0,1)] transition-all duration-700 md:min-h-[430px] ${restaurant.borderHover} hover:-translate-y-1.5`}
+    <Link
+      href={restaurant.href}
+      className={`group relative block min-h-[430px] overflow-hidden rounded-[1.6rem] border border-white/[0.09] bg-zinc-950 shadow-[0_45px_110px_-50px_rgba(0,0,0,1)] transition-all duration-700 md:min-h-[430px] ${restaurant.borderHover} hover:-translate-y-1.5`}
     >
       <Image
         src={restaurant.bgImage}
@@ -258,7 +259,7 @@ function ShowcaseCard({ restaurant }: { restaurant: ShowcaseRestaurant }) {
       </div>
 
       <PhoneMockup restaurant={restaurant} />
-    </article>
+    </Link>
   );
 }
 
