@@ -190,21 +190,30 @@ function CardNav() {
   );
 }
 
-function GoldButton({ children }: { children: React.ReactNode }) {
+function GoldButton() {
   return (
-    <button
-      type="button"
-      className="rounded-full border border-amber-400/50 bg-black/25 px-6 py-3 text-xs font-medium tracking-wide text-amber-50 backdrop-blur-xl transition-all duration-500 hover:border-amber-300 hover:bg-amber-400/12 hover:scale-[1.03]"
-    >
-      {children}
-    </button>
+    <>
+      <button
+        type="button"
+        className="hidden rounded-full border border-amber-400/50 bg-black/25 px-6 py-3 text-xs font-medium tracking-wide text-amber-50 backdrop-blur-xl transition-all duration-500 hover:border-amber-300 hover:bg-amber-400/12 hover:scale-[1.03] md:inline-flex"
+      >
+        Beställ online
+      </button>
+
+      <button
+        type="button"
+        className="inline-flex items-center gap-4 border-b border-amber-400 pb-2 text-lg font-medium text-amber-300 md:hidden"
+      >
+        Visa showcase <span className="text-2xl">→</span>
+      </button>
+    </>
   );
 }
 
 function ShowcaseCard({ restaurant }: { restaurant: ShowcaseRestaurant }) {
   return (
     <article
-      className={`group relative min-h-[520px] overflow-hidden rounded-[1.6rem] border border-white/[0.09] bg-zinc-950 shadow-[0_45px_110px_-50px_rgba(0,0,0,1)] transition-all duration-700 md:min-h-[430px] ${restaurant.borderHover} hover:-translate-y-1.5`}
+      className={`group relative min-h-[430px] overflow-hidden rounded-[1.6rem] border border-white/[0.09] bg-zinc-950 shadow-[0_45px_110px_-50px_rgba(0,0,0,1)] transition-all duration-700 md:min-h-[430px] ${restaurant.borderHover} hover:-translate-y-1.5`}
     >
       <Image
         src={restaurant.bgImage}
@@ -214,16 +223,16 @@ function ShowcaseCard({ restaurant }: { restaurant: ShowcaseRestaurant }) {
         sizes="(max-width: 1024px) 100vw, 50vw"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/92 via-black/35 to-black/15" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/20 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/50 to-black/15 md:from-black/92 md:via-black/35 md:to-black/15" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/25" />
 
-      <div className="absolute inset-x-0 top-0 z-20 px-6 py-5 md:px-8">
+      <div className="absolute inset-x-0 top-0 z-20 px-6 py-8 md:px-8 md:py-5">
         <div className="flex items-start justify-between gap-4">
           <div className="flex flex-col font-[family-name:var(--font-playfair)] leading-none text-white">
             <span className="text-sm uppercase tracking-[0.35em] text-amber-200/80">
               {restaurant.brandTop}
             </span>
-            <span className="mt-1 text-3xl uppercase tracking-[0.08em] md:text-4xl">
+            <span className="mt-3 text-5xl uppercase tracking-[0.08em] md:mt-1 md:text-4xl">
               {restaurant.nameDisplay}
             </span>
           </div>
@@ -232,19 +241,19 @@ function ShowcaseCard({ restaurant }: { restaurant: ShowcaseRestaurant }) {
         </div>
       </div>
 
-      <div className="relative z-10 flex min-h-[520px] max-w-[44%] flex-col justify-between p-6 pt-40 md:min-h-[430px] md:max-w-[36%] md:p-8 md:pt-40">
-        <div className="space-y-4">
-          <h3 className="font-[family-name:var(--font-playfair)] text-3xl leading-[1.05] text-white md:text-[2rem]">
+      <div className="relative z-10 flex min-h-[430px] max-w-[82%] flex-col justify-end p-6 pb-10 pt-44 md:min-h-[430px] md:max-w-[36%] md:justify-between md:p-8 md:pt-40">
+        <div className="space-y-5">
+          <h3 className="hidden font-[family-name:var(--font-playfair)] text-3xl leading-[1.05] text-white md:block md:text-[2rem]">
             {restaurant.name}
           </h3>
 
-          <p className="max-w-[270px] text-sm leading-[1.75] text-zinc-200/95">
+          <p className="max-w-[330px] text-[17px] leading-[1.65] text-zinc-100/95 md:max-w-[270px] md:text-sm md:leading-[1.75]">
             {restaurant.description}
           </p>
         </div>
 
-        <div className="relative z-10 mt-7">
-          <GoldButton>Beställ online</GoldButton>
+        <div className="relative z-10 mt-8">
+          <GoldButton />
         </div>
       </div>
 
@@ -263,10 +272,10 @@ export default function CinematicShowcase() {
           </p>
 
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl font-normal leading-tight tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
-  Digitala upplevelser som får
-  <br className="hidden md:block" />
-  {" "}restauranger att växa.
-</h2>
+            Digitala upplevelser som får{" "}
+            <br className="hidden md:block" />
+            restauranger att växa.
+          </h2>
 
           <p className="mx-auto mt-5 max-w-xl text-sm text-zinc-400 md:text-base">
             Vi skapar moderna hemsidor, menyer och digitala upplevelser som
